@@ -1,0 +1,43 @@
+# Entorno virtual
+venv/
+env/
+.venv/
+
+# Variables de entorno (NUNCA subir)
+.env
+
+# Base de datos local
+data/*.db
+data/*.db-journal
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing y coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker (logs locales)
+*.log
