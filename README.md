@@ -43,20 +43,21 @@ y mantiene memoria de la conversación entre mensajes.
 ## Arquitectura
 
 El proyecto implementa **Clean Architecture** con tres capas bien delimitadas:
-┌─────────────────────────────────────┐
-│         INFRASTRUCTURE LAYER        │
-│  FastAPI · SQLAlchemy · Gemini SDK  │
-└──────────────────┬──────────────────┘
-│
-┌──────────────────▼──────────────────┐
-│         APPLICATION LAYER           │
-│      Services · DTOs (Pydantic)     │
-└──────────────────┬──────────────────┘
-│
-┌──────────────────▼──────────────────┐
-│           DOMAIN LAYER              │
-│   Entities · Interfaces · Exceptions│
-└─────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────┐
+│                 INFRASTRUCTURE LAYER                │
+│         FastAPI · SQLAlchemy · Gemini SDK           │
+└──────────────────────┬──────────────────────────────┘
+                       │
+┌──────────────────────▼──────────────────────────────┐
+│                 APPLICATION LAYER                   │
+│             Services · DTOs (Pydantic)              │
+└──────────────────────┬──────────────────────────────┘
+                       │
+┌──────────────────────▼──────────────────────────────┐
+│                   DOMAIN LAYER                      │
+│          Entities · Interfaces · Exceptions         │
+└─────────────────────────────────────────────────────┘
 
 **Regla de dependencias:** las capas externas dependen de las internas, nunca al revés.
 El dominio no conoce SQLAlchemy ni Gemini. La capa de aplicación no conoce FastAPI.
@@ -82,6 +83,7 @@ El dominio no conoce SQLAlchemy ni Gemini. La capa de aplicación no conoce Fast
 ---
 
 ## Estructura del Proyecto
+```
 e-commerce-chat-ai/
 ├── src/
 │   ├── config.py                          # Configuración global (variables de entorno)
@@ -114,7 +116,7 @@ e-commerce-chat-ai/
 ├── docker-compose.yml
 ├── requirements.txt
 └── pyproject.toml
-
+```
 ---
 
 ## Instalación
@@ -266,4 +268,6 @@ y superior al 90% en la capa de aplicación.
 ## Autor
 
 **Juan José Baron Osorio**
-Ingeniería de Software — Universidad EAFIT
+
+
+Ingeniería de Sistemas — Universidad EAFIT
